@@ -36,7 +36,7 @@ namespace NoAFK
         {
             _clickTimer.Stop();
             var random = new Random();
-            int interval = random.Next(1000, 10000) * 60;
+            int interval = random.Next(1000, 10000) * 360;
             //int interval = random.Next(1000, 10000);
 
             TimeSpan t = TimeSpan.FromMilliseconds(interval);
@@ -76,6 +76,7 @@ namespace NoAFK
 
         }
 
+        private int _keyPressCount = 0;
         private void SendRandomKeys()
         {
             var inputSim = new InputSimulator();
@@ -91,28 +92,42 @@ namespace NoAFK
             {
                 case 0:
                     inputSim.Keyboard.KeyDown(WindowsInput.Native.VirtualKeyCode.VK_W);
-                    Thread.Sleep(random.Next(250, 2000));
+                    Thread.Sleep(random.Next(250, 500));
                     inputSim.Keyboard.KeyUp(WindowsInput.Native.VirtualKeyCode.VK_W);
                     break;
                 case 1:
                     inputSim.Keyboard.KeyDown(WindowsInput.Native.VirtualKeyCode.VK_A);
-                    Thread.Sleep(random.Next(250, 2000));
+                    Thread.Sleep(random.Next(250, 500));
                     inputSim.Keyboard.KeyUp(WindowsInput.Native.VirtualKeyCode.VK_A);
                     break;
                 case 2:
                     inputSim.Keyboard.KeyDown(WindowsInput.Native.VirtualKeyCode.VK_S);
-                    Thread.Sleep(random.Next(250, 2000));
+                    Thread.Sleep(random.Next(250, 500));
                     inputSim.Keyboard.KeyUp(WindowsInput.Native.VirtualKeyCode.VK_S);
                     break;
                 case 3:
                     inputSim.Keyboard.KeyDown(WindowsInput.Native.VirtualKeyCode.VK_D);
-                    Thread.Sleep(random.Next(250, 2000));
+                    Thread.Sleep(random.Next(250, 500));
                     inputSim.Keyboard.KeyUp(WindowsInput.Native.VirtualKeyCode.VK_D);
                     break;
             }
             Thread.Sleep(300);
             
             inputSim.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.SPACE);
+
+            Thread.Sleep(107);
+
+            if(_keyPressCount % 3 == 0 && _keyPressCount % 5 != 0)
+            {
+                inputSim.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.OEM_MINUS);
+            }
+
+            if (_keyPressCount % 5 == 0 && _keyPressCount % 3 != 0)
+            {
+                inputSim.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.OEM_PLUS);
+            }
+
+            _keyPressCount++;
         }
 
         private void SetTimerText(string text)
