@@ -35,7 +35,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(12, 165);
+            this.btnStart.Location = new System.Drawing.Point(12, 61);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(260, 64);
             this.btnStart.TabIndex = 0;
@@ -46,15 +46,15 @@
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(43, 92);
+            this.lblTimer.Location = new System.Drawing.Point(41, 28);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(68, 13);
+            this.lblTimer.Size = new System.Drawing.Size(85, 13);
             this.lblTimer.TabIndex = 1;
-            this.lblTimer.Text = "Timer length:";
+            this.lblTimer.Text = "Next Movement:";
             // 
             // txtbxTimer
             // 
-            this.txtbxTimer.Location = new System.Drawing.Point(118, 92);
+            this.txtbxTimer.Location = new System.Drawing.Point(132, 25);
             this.txtbxTimer.Name = "txtbxTimer";
             this.txtbxTimer.ReadOnly = true;
             this.txtbxTimer.Size = new System.Drawing.Size(100, 20);
@@ -64,13 +64,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 151);
             this.Controls.Add(this.txtbxTimer);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.btnStart);
             this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.Text = "No Wait in Queue";
+            this.Text = "Suck it Queue Times!";
             this.ResumeLayout(false);
             this.PerformLayout();
 

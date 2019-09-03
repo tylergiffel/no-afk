@@ -47,7 +47,9 @@ namespace NoAFK
                                     t.Seconds,
                                     t.Milliseconds);
 
-            SetTimerText(humanReadableLength);
+            var timeForNextMovement = DateTime.Now.AddMilliseconds(interval).ToLongTimeString();
+
+            SetTimerText(timeForNextMovement);
 
             SendRandomKeys();
 
