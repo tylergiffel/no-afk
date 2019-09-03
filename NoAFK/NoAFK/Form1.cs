@@ -36,7 +36,7 @@ namespace NoAFK
         {
             _clickTimer.Stop();
             var random = new Random();
-            int interval = random.Next(1000, 10000) * 360;
+            int interval = random.Next(1000, 10000) * 100;
             //int interval = random.Next(1000, 10000);
 
             TimeSpan t = TimeSpan.FromMilliseconds(interval);
